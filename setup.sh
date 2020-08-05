@@ -9,8 +9,13 @@ module load anaconda2/4.3.0
 pip install --user bs4
 
 # setup
+MYDIR=/lustre/${GROUP}/${USER}
+WORKDIR=$MYDIR/darknet
+
+cd $MYDIR
 mkdir ./usr
 mkdir ./usr/local
+export LD_LIBRARY_PATH=$MYDIR/usr/local/lib64:$LD_LIBRARY_PATH
 
 # install OpenCV
 wget https://github.com/opencv/opencv/archive/3.4.0.tar.gz
@@ -25,6 +30,7 @@ make
 make install
 
 # install Yolov3
+cd $MYDIR
 git clone https://github.com/AlexeyAB/darknet
 cd darknet
 ./build.sh
