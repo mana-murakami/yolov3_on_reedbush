@@ -9,7 +9,7 @@ Reedbush上のOpenCVモジュールではYoloに必要なモジュールが足�
 $ chmod +x setup.sh
 $ ./setup.sh
 ```
-##　Yolov3のジョブ投入
+## Yolov3のジョブ投入
 ジョブを投入する。
 ```
 $ chmod +x job.sh
