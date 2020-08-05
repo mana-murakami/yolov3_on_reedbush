@@ -6,8 +6,6 @@ module load gnu/gcc_7.5.0
 module load cuda10/10.0.130
 module load anaconda2/4.3.0
 
-pip install --user bs4
-
 # setup
 MYDIR=/lustre/${GROUP}/${USER}
 WORKDIR=$MYDIR/darknet
@@ -18,6 +16,7 @@ mkdir ./usr/local
 export LD_LIBRARY_PATH=$MYDIR/usr/local/lib64:$LD_LIBRARY_PATH
 
 # install OpenCV
+pip install --user bs4
 wget https://github.com/opencv/opencv/archive/3.4.0.tar.gz
 tar xvzf 3.4.0.tar.gz
 cd opencv-3.4.0/
